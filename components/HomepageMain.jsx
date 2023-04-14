@@ -26,7 +26,7 @@ const HomepageMain = () => {
 	}
 
 	return (
-		<div className='flex flex-col gap-[8px] justify-center items-center mt-[120px] overflow-hidden'>
+		<div className='flex-grow  flex flex-col gap-[8px] justify-center items-center overflow-hidden'>
 			<div className='flex gap-[8px] items-center '>
 				{" "}
 				<Image

@@ -103,3 +103,8 @@ body{
     border-top: solid 25px  #EAE8E4;
     border-left: solid 25px #EAE8E4;
 }
+
+
+.animation{
+    transition: all 5s;
+}
