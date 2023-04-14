@@ -81,7 +81,7 @@ export default function Home() {
 	// }, []);
 
 	return (
-		<div className='max-w-[1500px] mx-auto '>
+		<div className=' mx-auto '>
 			<Head>
 				<title>Ezomon Glory</title>
 				<meta name='description' content="Ezomon Glory's Portfolio" />
