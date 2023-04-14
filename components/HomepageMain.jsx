@@ -1,5 +1,6 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 
 const HomepageMain = () => {
 	if (typeof window != "undefined") {
@@ -25,8 +26,13 @@ const HomepageMain = () => {
 		
 	}
 
+    useEffect(()=> {
+        setSvgWidth(window.innerWidth)
+
+    })
+
 	return (
-		<div className='flex-grow  flex flex-col gap-[8px] justify-center items-center overflow-hidden'>
+		<div className='flex-grow flex flex-col gap-0 justify-center items-center overflow-x-hidden'>
 			<div className='flex gap-[8px] items-center '>
 				{" "}
 				<Image
@@ -56,9 +62,9 @@ const HomepageMain = () => {
 				{/* <div className='line h-[80px] w-screen'></div> */}
 
 				<svg
-					width='1920'
-					height='80'
-					viewBox='0 0 1920 47'
+					width={svgWidth}
+					height="80"
+					viewBox={`0 0 ${svgWidth} 40`}
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
                     className="path squiggle-animated hidden lg:block"
@@ -76,8 +82,8 @@ const HomepageMain = () => {
 
 				<svg
 					width='1000'
-					height='80'
-					viewBox='250 0 900 80'
+					height='200'
+					viewBox='250 0 900 200'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
                     className="path squiggle-animated hidden md:block lg:hidden"
