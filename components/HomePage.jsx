@@ -33,7 +33,7 @@ const HomePage = () => {
 			<HomePageHeader />
             <div className="flex-grow high-screen"></div>
 			<HomepageMain />
-            <div className="flex-grow max-h-[10%] low-screen"></div>
+            <div className="flex-grow max-h-[5%] low-screen"></div>
 			<HomePageFooter />
 		</div>
 	);

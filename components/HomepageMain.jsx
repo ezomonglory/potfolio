@@ -57,8 +57,8 @@ const HomepageMain = () => {
 
 				<svg
 					width='1500'
-					height='80'
-					viewBox='0 0 1500 47'
+					height='150'
+					viewBox='0 0 1500 150'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
                     className="path squiggle-animated hidden lg:block"
@@ -76,8 +76,8 @@ const HomepageMain = () => {
 
 				<svg
 					width='1000'
-					height='200'
-					viewBox='250 0 900 200'
+					height='120'
+					viewBox='250 0 900 120'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
                     className="path squiggle-animated hidden md:block lg:hidden"

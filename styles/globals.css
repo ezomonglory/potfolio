@@ -122,4 +122,45 @@ body{
     .low-screen{
        max-height: 5% !important;
     }
+
+     .leading{
+        display: none !important;
+    }
+
+    .max-leading{
+        display: block !important;;
+    }
+}
+
+@media (max-height:800px){
+    .high-screen{
+        min-height: 20% !important;
+        flex-grow: 0 !important;
+    }
+
+    .low-screen{
+       max-height: 5% !important;
+    }
+
+   
+}
+
+@media (max-height:700px){
+    .high-screen{
+        min-height: 12% !important;
+        flex-grow: 0 !important;
+    }
+
+    .low-screen{
+       min-height: 2% !important;
+       flex-grow: 0;
+    }
+
+    .leading{
+        display: block !important;
+    }
+
+    .max-leading{
+        display: none !important;;
+    }
 }
