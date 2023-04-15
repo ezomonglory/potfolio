@@ -34,7 +34,7 @@ const LeftSideWorks = () => {
 						</span>
 					</div>
 
-					<h1 className=' text-[24px] md:text-[40px] xl:text-[70px] text-[#EAE8E4] leading-[60px] tracking-[2.5px] '>
+					<h1 className=' text-[24px] md:text-[40px]  text-[#EAE8E4] leading-[60px] tracking-[2.5px] '>
 						{work.name}
 					</h1>
                     </div>
