@@ -142,6 +142,14 @@ body{
        max-height: 5% !important;
     }
 
+    .leading{
+        display: block !important;
+    }
+
+    .max-leading{
+        display: none !important;;
+    }
+
    
 }
 
@@ -156,11 +164,5 @@ body{
        flex-grow: 0;
     }
 
-    .leading{
-        display: block !important;
-    }
-
-    .max-leading{
-        display: none !important;;
-    }
+    
 }
