@@ -87,6 +87,7 @@ export default function Home() {
 				className={`fixed h-screen animation`}
 				id='main'
 				onWheel={scroll}
+                onTouchMove={scroll}
 				style={{
 					top: 0,
 				}}
