@@ -24,8 +24,8 @@ const HomepageMain = () => {
 	}
 
 	return (
-		<div className='flex flex-col gap-0 justify-center items-center overflow-x-hidden lg:flex-grow-0'>
-			<div className='flex gap-[8px] items-center '>
+		<div className='flex flex-col gap-0 justify-center items-center overflow-x-hidden lg:flex-grow-0 -mt-2 md:-mt-0'>
+			<div className='flex gap-[8px] items-center mb-[8px] md:mb-0'>
 				{" "}
 				<Image
 					src='./images/Hand Waving.svg'
@@ -46,9 +46,15 @@ const HomepageMain = () => {
 				</p>
 			</div>
 
-			<div className='text-[40px] sm:text-[64px]  sm:leading-[100px] lg:text-[96px] xl:text-[136px] lg:leading-[120px]  tracking-[-0.5px] font-front-end text-[#111821]  xl:leading-[160px] '>
+			<div className='text-[40px] sm:text-[64px]  sm:leading-[100px] lg:text-[96px] xl:text-[136px] lg:leading-[120px]  tracking-[-0.5px] font-front-end text-[#111821]  xl:leading-[160px] hidden md:block '>
 				Frontend-Engineer
 			</div>
+
+            <div className='text-[60px]  leading-[60px] sm:leading-[100px]   tracking-[-0.5px] font-front-end text-[#111821]  md:hidden mb-8'>
+				<h1>Frontend</h1>
+                <h1>Engineer</h1>
+			</div>
+
 
 			<div className='relative overflow-x-hidden'>
 				{/* <div className='line h-[80px] w-screen'></div> */}
@@ -56,7 +62,7 @@ const HomepageMain = () => {
 				<svg
 					width='1500'
 					height='150'
-					viewBox='0 0 1500 150'
+					viewBox='0 0 1500 120'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
 					className='path squiggle-animated hidden lg:block'
@@ -75,7 +81,7 @@ const HomepageMain = () => {
 				<svg
 					width='1002'
 					height='65'
-					viewBox='0 0 1002 65'
+					viewBox='0 0 1002 45'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
 					className='path squiggle-animated hidden md:block lg:hidden'
@@ -94,7 +100,7 @@ const HomepageMain = () => {
 					viewBox='0 0 652 47'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
-					className='mobile-lg md:hidden path squiggle-animated'
+					className='mobile-lg md:hidden path squiggle-animated mb-8'
 				>
 					<path
 						d='M1 15.4804C47.0313 6.36199 94.4011 -3.75583 140.471 3.4458C149.807 4.90499 152.772 11.5957 147.163 15.4804L114.529 36.6854C103.589 43.794 110.39 46.0542 118.254 46.4572C168.244 45.981 219.003 36.8115 268.941 30.3851L378.882 16.2368C436.039 8.76254 508.226 5.44028 565.505 10.6656C577.412 11.751 574.24 17.7761 564.968 21.3385C544.406 29.2375 523.626 33.1705 503.275 33.9859C498.728 34.1682 499.904 31.2926 503.224 29.0999C513.031 22.6264 536.868 23.4535 551.051 24.0288L573.265 26.0451C599.679 29.8708 625.22 29.8878 651 29.0392'
@@ -106,10 +112,10 @@ const HomepageMain = () => {
 
 				<svg
 					width='400'
-					height='40'
-					viewBox='0 0 400 40'
+					height='60'
+					viewBox='0 0 400 30'
 					fill='none'
-					className='path squiggle-animated mobile '
+					className='path squiggle-animated mobile mb-4'
 					xmlns='http://www.w3.org/2000/svg'
 				>
 					<path
@@ -124,7 +130,7 @@ const HomepageMain = () => {
 
 				<a
 					href='#'
-					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[16px] border border-[#DE3F3B] w-[116px] h-[40px] md:w-[149px] md:h-[61px] items-center justify-center  center cursor-pointer bg-[#EAE8E4] mx-auto'
+					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[24px]   border border-[#DE3F3B]  h-[40px] md:w-[15%] lg:w-[10%] md:h-[61px] items-center justify-center  center cursor-pointer bg-[#EAE8E4] mx-auto'
 				>
 					<h1 className=' text-[16px] md:text-[20px] leading-[24px] md:leading-[29px] tracking-[0.5px]  '>
 						Let’s Talk

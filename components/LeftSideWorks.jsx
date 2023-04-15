@@ -40,7 +40,7 @@ const LeftSideWorks = () => {
                     </div>
 					<a
 						href={work.href}
-						className='text-[#DE3F3B] text-[16px] md:text-[24px] leading-[24px] md:leading-[29px] tracking-[0.5px]'
+						className='text-[#DE3F3B] text-[16px] md:text-[24px] leading-[24px] md:leading-[29px] tracking-[0.5px] font-md'
 					>
 						View
 					</a>

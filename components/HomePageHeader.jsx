@@ -23,8 +23,8 @@ const HomePageHeader = () => {
 			</div>
 			<Image
 				src='/images/menu.svg'
-				width={32}
-				height={32}
+				width={24}
+				height={24}
 				className='block md:hidden'
 				alt='menu'
 			/>
