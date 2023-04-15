@@ -10,9 +10,9 @@ const HomePageHeader = () => {
 		<div className='flex justify-between mt-[24px] md:mt-[32px] mx-[16px] md:mx-[80px] py-[16px]'>
 			<Image src='./images/EG Logo.svg' width={64} height={40} alt='EG Logo' className="hidden sm:hidden lg:block" />
 
-            <Image src='./images/EG Logo.svg' width={47} height={28} alt='EG Logo' className="sm:block lg:hidden hidden" />
+            <Image src='./images/EG Logo.svg' width={47} height={28} alt='EG Logo' className="block lg:hidden " />
 
-            <Image src='./images/EG Logo.svg' width={28} height={24} alt='EG Logo' className="block sm:hidden" />
+            {/* <Image src='./images/EG Logo.svg' width={28} height={24} alt='EG Logo' className="block sm:hidden" /> */}
 
 			<div className='hidden md:flex'>
 				<ul className='flex gap-[52px] leading-[22px] tracking-[0.5px] text-[16px] '>
@@ -23,8 +23,8 @@ const HomePageHeader = () => {
 			</div>
 			<Image
 				src='/images/menu.svg'
-				width={24}
-				height={24}
+				width={28}
+				height={28}
 				className='block md:hidden'
 				alt='menu'
 			/>

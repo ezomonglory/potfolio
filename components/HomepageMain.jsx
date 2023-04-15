@@ -50,7 +50,7 @@ const HomepageMain = () => {
 				Frontend-Engineer
 			</div>
 
-            <div className='text-[60px]  leading-[60px] sm:leading-[100px]   tracking-[-0.5px] font-front-end text-[#111821]  md:hidden mb-8'>
+            <div className='text-[64px]  leading-[60px] sm:leading-[100px]   tracking-[-0.5px] font-front-end text-[#111821]  md:hidden mb-8'>
 				<h1>Frontend</h1>
                 <h1>Engineer</h1>
 			</div>
@@ -132,7 +132,7 @@ const HomepageMain = () => {
 					href='#'
 					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[24px]   border border-[#DE3F3B]  h-[40px] md:w-[15%] lg:w-[10%] md:h-[61px] items-center justify-center  center cursor-pointer bg-[#EAE8E4] mx-auto'
 				>
-					<h1 className=' text-[16px] md:text-[20px] leading-[24px] md:leading-[29px] tracking-[0.5px]  '>
+					<h1 className=' text-[16px] md:text-[20px] leading-[24px] md:leading-[29px] tracking-[0.5px] font-md '>
 						Let’s Talk
 					</h1>
 					<Image

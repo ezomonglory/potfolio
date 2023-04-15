@@ -130,7 +130,7 @@ body{
     }
 }
 
-@media (max-height:800px){
+@media (max-height:799px){
     .high-screen{
         min-height: 15% !important;
         flex-grow: 0 !important;
@@ -151,7 +151,7 @@ body{
    
 }
 
-@media (max-height:700px){
+@media (max-height:699px){
     .high-screen{
         min-height: 12% !important;
         flex-grow: 0 !important;
