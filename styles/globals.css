@@ -115,7 +115,11 @@ body{
 
 @media (min-height:800px){
     .high-screen{
-        max-height: 10% !important;
+        min-height: 20% !important;
         flex-grow: 0 !important;
+    }
+
+    .low-screen{
+       max-height: 5% !important;
     }
 }
