@@ -7,7 +7,7 @@ import React from "react";
 
 const HomePageHeader = () => {
 	return (
-		<div className='flex justify-between mt-[24px] md:mt-[32px] mx-[16px] md:mx-[80px] py-[16px]'>
+		<div className='flex justify-between mt-[8px] md:mt-[32px] mx-[16px] md:mx-[80px] py-[16px]'>
 			<Image src='./images/EG Logo.svg' width={64} height={40} alt='EG Logo' className="hidden sm:hidden lg:block" />
 
             <Image src='./images/EG Logo.svg' width={47} height={28} alt='EG Logo' className="block lg:hidden " />

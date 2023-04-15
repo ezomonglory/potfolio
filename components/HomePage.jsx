@@ -29,11 +29,11 @@ const HomePage = () => {
 	// }, []);
 
 	return (
-		<div ref={homeRef} className='w-screen flex flex-col bg-[#EAE8E4] h-screen relative overflow-hidden' id='home' >
+		<div ref={homeRef} className='w-screen flex flex-col bg-[#EAE8E4] h-[100vh] relative overflow-hidden' id='home' >
 			<HomePageHeader />
             <div className="flex-grow high-screen"></div>
 			<HomepageMain />
-            <div className="flex-grow max-h-[5%] low-screen"></div>
+            <div className="flex-grow low-screen"></div>
 			<HomePageFooter />
 		</div>
 	);

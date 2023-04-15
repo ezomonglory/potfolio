@@ -3,7 +3,7 @@ import React from "react";
 
 const HomePageFooter = () => {
 	return (
-		<div className='flex flex-col space-y-[2%] items-center justify-center overflow-y-hidden'>
+		<div className='flex flex-col space-y-[2%] items-center justify-center overflow-y-hidden -mt-8 md:-mt-0'>
 			<h1 className='text-[18px] leading-[22px] tracking-[0.5px] text-[#252C35] mb-8 md:mb-0'>
 				Let’s check out some cool stuff!
 			</h1>

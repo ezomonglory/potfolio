@@ -158,7 +158,7 @@ body{
     }
 
     .low-screen{
-       min-height: 2% !important;
+       /* min-height: 2% !important; */
        flex-grow: 0;
     }
 
