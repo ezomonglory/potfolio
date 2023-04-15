@@ -108,3 +108,14 @@ body{
 .animation{
     transition: all ease-in-out 2s;
 }
+
+.high-screen{
+
+}
+
+@media (min-height:800px){
+    .high-screen{
+        max-height: 10% !important;
+        flex-grow: 0 !important;
+    }
+}

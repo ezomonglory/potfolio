@@ -26,7 +26,7 @@ const HomepageMain = () => {
 	}
 
 	return (
-		<div className='flex-grow flex flex-col gap-0 justify-center items-center overflow-x-hidden'>
+		<div className='flex-grow flex flex-col gap-0 justify-center items-center overflow-x-hidden xl:flex-grow-0'>
 			<div className='flex gap-[8px] items-center '>
 				{" "}
 				<Image
@@ -43,12 +43,12 @@ const HomepageMain = () => {
 					alt='wave'
 					className='md:hidden block'
 				/>
-				<p className='text-[18px] md:text-[24px] leading-[22px] md:leading-[29px] tracking-[0.5px] md:tracking-[1.4px] text-[#252C35] '>
+				<p className='text-[18px] md:text-[24px] leading-[22px] md:leading-[29px] tracking-[0.5px] md:tracking-[1px] text-[#252C35] '>
 					Hello, I’m Ezomon Glory
 				</p>
 			</div>
 
-			<div className='text-[40px] sm:text-[60px] sm:leading-[100px] lg:text-[106px] xl:text-[136px] lg:leading-[163px]  tracking-[-0.5px] font-front-end text-[#111821]  '>
+			<div className='text-[40px] sm:text-[60px] sm:leading-[100px] lg:text-[96px] xl:text-[136px] lg:leading-[120px]  tracking-[-0.5px] font-front-end text-[#111821]  xl:leading-[160px] '>
 				Frontend-Engineer
 			</div>
 
@@ -56,16 +56,16 @@ const HomepageMain = () => {
 				{/* <div className='line h-[80px] w-screen'></div> */}
 
 				<svg
-					width='1920'
+					width='1500'
 					height='80'
-					viewBox='0 0 1920 47'
+					viewBox='0 0 1500 47'
 					fill='none'
 					xmlns='http://www.w3.org/2000/svg'
                     className="path squiggle-animated hidden lg:block"
 				>
 					<path
 						// className='squiggle-animated path'
-						d='M0 15.4804C101.977 6.36199 206.919 -3.75583 308.982 3.4458C329.664 4.90499 336.233 11.5957 323.807 15.4804L251.51 36.6854C227.274 43.794 242.34 46.0542 259.764 46.4572C370.51 45.981 482.961 36.8115 593.593 30.3851L837.154 16.2368C963.778 8.76254 1123.7 5.44028 1250.6 10.6656C1276.97 11.751 1269.95 17.7761 1249.41 21.3385C1203.85 29.2375 1157.82 33.1705 1112.73 33.9859C1102.66 34.1682 1105.26 31.2926 1112.62 29.0999C1134.35 22.6264 1187.15 23.4535 1218.57 24.0288L1267.79 26.0451C1326.3 29.8708 1382.89 29.8878 1920 29.0392'
+						d='M0 15.4804C101.977 6.36199 206.919 -3.75583 308.982 3.4458C329.664 4.90499 336.233 11.5957 323.807 15.4804L251.51 36.6854C227.274 43.794 242.34 46.0542 259.764 46.4572C370.51 45.981 482.961 36.8115 593.593 30.3851L837.154 16.2368C963.778 8.76254 1123.7 5.44028 1250.6 10.6656C1276.97 11.751 1269.95 17.7761 1249.41 21.3385C1203.85 29.2375 1157.82 33.1705 1112.73 33.9859C1102.66 34.1682 1105.26 31.2926 1112.62 29.0999C1134.35 22.6264 1187.15 23.4535 1218.57 24.0288L1267.79 26.0451C1326.3 29.8708 1382.89 29.8878 1500 29.0392'
 						stroke='#000'
 						strokeOpacity='0.5'
 						strokeMiterlimit='22.9256'
@@ -113,9 +113,9 @@ const HomepageMain = () => {
 
 				<a
 					href='#'
-					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[16px] border border-[#DE3F3B] w-[116px] h-[40px] md:w-[149px] md:h-[61px] items-center justify-center bg-white center cursor-pointer'
+					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[16px] border border-[#DE3F3B] w-[116px] h-[40px] md:w-[149px] md:h-[61px] items-center justify-center  center cursor-pointer bg-white'
 				>
-					<h1 className=' text-[16px] md:text-[24px] leading-[24px] md:leading-[29px] tracking-[0.5px]  '>
+					<h1 className=' text-[16px] md:text-[20px] leading-[24px] md:leading-[29px] tracking-[0.5px]  '>
 						Let’s Talk
 					</h1>
 					<Image

@@ -11,7 +11,7 @@ const HomePageHeader = () => {
 			<Image src='./images/EG Logo.svg' width={64} height={40} alt='EG Logo' />
 
 			<div className='hidden md:flex'>
-				<ul className='flex gap-[52px] leading-[22px] font-[18px] tracking-[0.5px] '>
+				<ul className='flex gap-[52px] leading-[22px] tracking-[0.5px] text-[16px] '>
 					<li>Resume</li>
 					<li>Works</li>
 					<li>About Me</li>
