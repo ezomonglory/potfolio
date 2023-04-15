@@ -48,7 +48,7 @@ const HomepageMain = () => {
 				</p>
 			</div>
 
-			<div className='text-[40px] sm:text-[60px] sm:leading-[100px] lg:text-[96px] xl:text-[136px] lg:leading-[120px]  tracking-[-0.5px] font-front-end text-[#111821]  xl:leading-[160px] '>
+			<div className='text-[40px] sm:text-[64px]  sm:leading-[100px] lg:text-[96px] xl:text-[136px] lg:leading-[120px]  tracking-[-0.5px] font-front-end text-[#111821]  xl:leading-[160px] '>
 				Frontend-Engineer
 			</div>
 
