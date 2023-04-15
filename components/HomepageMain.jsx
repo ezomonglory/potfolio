@@ -130,7 +130,7 @@ const HomepageMain = () => {
 
 				<a
 					href='#'
-					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[24px]   border border-[#DE3F3B]  h-[40px] md:w-[15%] lg:w-[10%] md:h-[61px] items-center justify-center  center cursor-pointer bg-[#EAE8E4] mx-auto'
+					className='flex gap-[4px] text-[#DE3F3B] rounded-[32px]  p-[24px]   border border-[#DE3F3B]  h-[40px] md:w-[169px] lg:w-[12%] md:h-[61px] items-center justify-center  center cursor-pointer bg-[#EAE8E4] mx-auto'
 				>
 					<h1 className=' text-[16px] md:text-[20px] leading-[24px] md:leading-[29px] tracking-[0.5px] font-md '>
 						Let’s Talk
