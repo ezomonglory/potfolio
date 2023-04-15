@@ -8,16 +8,16 @@ const HomePageFooter = () => {
 				Let’s check out some cool stuff!
 			</h1>
 
-			<svg
+			{/* <svg
 				width='2'
 				height='109'
 				viewBox='0 0 2 109'
 				fill='none'
 				xmlns='http://www.w3.org/2000/svg'
-				className='leading'
+				className='leading '
 			>
 				<path d='M1 1L0.517489 188.999' stroke='#4D545D' stroke-opacity='0.8' />
-			</svg>
+			</svg> */}
 
 			<svg
 				width='3'
