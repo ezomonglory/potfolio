@@ -134,7 +134,7 @@ body{
 
 @media (max-height:800px){
     .high-screen{
-        min-height: 20% !important;
+        min-height: 15% !important;
         flex-grow: 0 !important;
     }
 
