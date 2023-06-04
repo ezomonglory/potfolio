@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterTop = () => {
 	return (
-		<div className=' flex flex-col md:flex-row justify-between items-center pl-[16px] md:px-[80px] mt-[64px] md:mt-[176px] gap-[15px] md:gap-0 '>
+		<div className=' flex flex-col md:flex-row justify-between items-center pl-[16px] md:px-[80px] mt-4 gap-[15px] md:gap-0 '>
 			<Image
 				src='/images/EG PROFILE PICTURE 1.svg'
 				width={304}

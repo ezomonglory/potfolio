@@ -1,18 +1,24 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import { WorksData } from "../Data";
 
 const LeftSideWorks = () => {
+    
+ 
 	return (
-		<div className='flex flex-col space-y-[72px] md:space-y-[90px] px-[16px] lg:px-[80px]'>
+        
+
+		<div className='flex flex-col space-y-[72px] md:space-y-[90px] px-[16px] lg:px-[80px] absolute animation  ' style={{
+            top: "0px",
+        }}>  
 			{WorksData.map((work)=> (
-                <div className='flex gap-[32px] work-space-img lg:gap-24 items-center' key={work.number}>
+                <div className={`flex gap-[32px] work-space-img lg:gap-24 items-center `}  key={work.number} id={work.id} >
 				<Image
 					src={work.image}
 					width={360}
-					height={312}
+					height={480}
 					alt={work.name}
-                    className="work-border hidden md:block"
+                    className="work-border hidden md:block "
 				/>
 
                 <Image
@@ -46,7 +52,7 @@ const LeftSideWorks = () => {
 					</a>
 				</div>
 			</div>
-            ))}
+            ))}            
 		</div>
 	);
 };

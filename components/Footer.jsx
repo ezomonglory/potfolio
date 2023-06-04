@@ -5,7 +5,7 @@ import FooterTop from './FooterTop'
 
 const Footer = () => {
   return (
-    <div className='overflow-hidden pb-[40px] h-full'>
+    <div className='overflow-hidd pb-4 h-full'>
         <FooterTop />
         <FooterMid />
         <FooterBottom/>

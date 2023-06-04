@@ -6,9 +6,11 @@ import Works from "../components/Works";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-	const [top, setTop] = useState(0);
+	const [top, setTop] = useState(1);
 	const [height, setHeight] = useState(0);
-    const sectionRef = useRef(1)
+	const ref = useRef(null);
+	const mainRef = useRef(null);
+	const sectionRef = useRef(1);
 
 	if (typeof window != "undefined") {
 		// var path = document.querySelector(".squiggle-animated path");
@@ -28,51 +30,55 @@ export default function Home() {
 		// path.style.strokeDashoffset = "0";
 	}
 
-	// useEffect(()=> {
-	//     setHeight(window.innerHeight)
-	// }, [])
+    // const Pscroll = (num) => {
+    //      console.log("calll")
+    //     let topp = mainRef.current.style.top
+    //     ref.current = setInterval(() => {
+	// 		if (
+	// 			Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
+	// 			(window.innerHeight * num)
+	// 		) {
+	// 			clearInterval(ref.current);
+	// 			mainRef.current.style.top = `-${window.innerHeight * num}px`;
+	// 			return;
+	// 		}
 
-	const ref = useRef(null);
-	const mainRef = useRef(null);
-	const scroll = (e) => {
-        console.log(sectionRef.current)
-        console.log(e)
-			ref.current = setInterval(() => {		
+    //         console.log(parseInt(mainRef.current.style.top.replace("px", "")) - 50)
+	// 		console.log(
+	// 		    Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) ,
+	// 		    window.innerHeight
+	// 		);
+    //         let T = Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) + window.innerHeight
+    //         mainRef.current.style.top = `-${T}px`
+    //         console.log(mainRef.current.style.top, T)
 
+	// 	}, 50);
+    // }
+
+	const scroll = (num) => {
+		console.log(top, num);
+		ref.current = setInterval(() => {
 			if (
 				Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
-				window.innerHeight
+				(window.innerHeight * num)
 			) {
-                console.log("entered if block")                
 				clearInterval(ref.current);
-				mainRef.current.style.top = `-${sectionRef.current*window.innerHeight}px`;
-                // sectionRef.current +=1
+				mainRef.current.style.top = `-${window.innerHeight * num}px`;
 				return;
 			}
+
+            console.log(parseInt(mainRef.current.style.top.replace("px", "")) - 50)
 			console.log(
-				Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) ,
-				sectionRef.current*window.innerHeight
+			    Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) ,
+			    window.innerHeight
 			);
 			mainRef.current.style.top = `${
 				parseInt(mainRef.current.style.top.replace("px", "")) - 50
 			}px`;
 		}, 50);
-		return () => clearInterval(ref.current);
-
-		// document.getElementById("main").style.top= top-height
-		// ref.current = setInterval(() => {
-		// 	setHeight((current) => {
-		// 		console.log(current, Math.abs(current) === window.innerHeight);
-		// 		if (Math.abs(current) === window.innerHeight)
-		// 			return clearInterval(ref.current);
-		// 		return current + 50;
-		// 	});
-		// }, 50);
+        console.log(mainRef.current.style.top);
+        // return () => clearInterval(ref.current)
 	};
-
-	useEffect(() => {
-        sectionRef.current = 1
-	}, []);
 
 	return (
 		<div className=' mx-auto '>
@@ -84,16 +90,25 @@ export default function Home() {
 
 			<main
 				ref={mainRef}
-				className={`fixed h-screen animation`}
+				className={`fixed h-screen animation `}
 				id='main'
-				onWheel={scroll}
-                onTouchMove={scroll}
+				onWheel={() => {
+					if (top === 1) {
+						scroll(1);
+					} else if (top === 2) {					
+                        mainRef.current.classList.add('height')
+					}
+				}}
+				onScroll={() => {
+					scroll(top);
+				}}
+				onTouchMove={() => scroll(top)}
 				style={{
-					top: 0,
+					top: "0px",                    
 				}}
 			>
 				<HomePage />
-				<Works />
+				<Works setNewTop={setTop} />
 				<Footer />
 			</main>
 		</div>

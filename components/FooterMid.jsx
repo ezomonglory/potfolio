@@ -21,8 +21,8 @@ const FooterMid = () => {
     }
       
   return (
-    <div className='flex flex-col space-y-[8px] mt-[40px] overflow-x-hidden '>
-        <marquee width="100%" height="140px" className="text-[117px] font-md  leading-[140.5px] tracking-[1px] text-[#4d545d67] hidden md:block" direction="right" behaviour="scroll" scrollamount="20" hspace="20">
+    <div className='flex flex-col space-y-[8px] mt-[10px] overflow-x-hidden '>
+        <marquee width="100%" height="140px" className="text-[80px] font-md  leading-[140.5px] tracking-[1px] text-[#4d545d67] hidden md:block" direction="right" behaviour="scroll" scrollamount="20" hspace="20">
         <span ref={textRef} id="text">Got a gig for me? Hit me up.Got a gig for me? Hit me up.Got a gig for me? Hit me up.Got a gig for me? Hit me up.Got a gig for me? Hit me up.</span> 
         </marquee>  
 
