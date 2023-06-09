@@ -33,18 +33,18 @@ export default function Home() {
       
 	}
      
-    // mainRef.current.bind('touchstart', function (e){
-    //     ts = e.originalEvent.touches[0].clientY;
-    //  });
+    function handleTouchStart (e){
+        ts = e.originalEvent.touches[0].clientY;
+     }
      
-    //  mainRef.current.bind('touchend', function (e){
-    //     var te = e.originalEvent.changedTouches[0].clientY;
-    //     if(ts > te){
-    //        alert("up")
-    //     }else {
-    //        alert("down")
-    //     }
-    //  });
+     function handleTouchEnd (e){
+        var te = e.originalEvent.changedTouches[0].clientY;
+        if(ts > te){
+           alert("up")
+        }else {
+           alert("down")
+        }
+     }
   
     
 
@@ -110,9 +110,12 @@ export default function Home() {
 				id='main'
 				onWheel={()=>                                        
                     scroll(top, mainRef.current.clientHeight)}  
-                    onTouchStart={()=> {
-                        alert("dsds")
-                    }}              					
+                    onTouchStart={(e)=> {
+                        handleTouchStart(e)
+                    }}              	
+                    onTouchEnd={(e)=> {
+                        handleTouchEnd(e)
+                    }}				
 				
 				style={{
 					marginTop: '0px',
