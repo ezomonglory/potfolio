@@ -11,7 +11,7 @@ export default function Home() {
 	const ref = useRef(null);
 	const mainRef = useRef();
 	const heightRef = useRef(1);
-
+    let mobileDirection;
 	if (typeof window != "undefined") {
 		// var path = document.querySelector(".squiggle-animated path");
 		// var length = path.getTotalLength();
@@ -60,10 +60,13 @@ function touchEndHandler(event) {
         /* access stored touch info on touchend */
         var theTouchInfo = touchesInAction[ "$" + touches[j].identifier ];
         theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
-        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */
-        alert(theTouchInfo.dy + "dyyy")
+        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */  
+        mobileDirection = theTouchInfo.dy      
     }
 
+    if (mobileDirection < 0){
+        scroll(top, mainRef.current.clientHeight)
+    }
     /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 
 }

@@ -19,6 +19,9 @@ const Works = ({ setNewTop }) => {
 	const [bottomCount, setbottomCount] = useState(0);
 	const [Top, setTop] = useState(0);
 	const [Bottom, setBottom] = useState(0);
+    var touchesInAction = {};
+    var mobileDirection;
+
 
 	useEffect(() => {
 		window.screen.width < 768
@@ -26,9 +29,9 @@ const Works = ({ setNewTop }) => {
 			: setWorksImage(WorksImageWeb);
 	}, []);
 
-	const scroll1 = (e) => {
+	const scroll1 = (dir) => {
 		
-		if (e.deltaY > 0) {
+		if (dir > 0) {
 			console.log(count);
 			if (count >= WorksImage.length - 2) {
 				setNewTop(2);
@@ -98,8 +101,8 @@ const Works = ({ setNewTop }) => {
 		}
 	};
 
-	const scroll2 = (e) => {
-		if (e.deltaY > 0) {
+	const scroll2 = (dir) => {
+		if (dir > 0) {
 			// if (bottomCount <= WorksText.length - 2) {
 			// 	setNewTop(2);
 			// 	return;
@@ -205,16 +208,55 @@ const Works = ({ setNewTop }) => {
 		}
 	};
 
-	const scroll = (e) => {
-        console.log(workRef);
-		if (e.deltaY > 0) {
+
+function touchStartHandler(event) {
+    var touches = event.changedTouches;
+
+    for(var j = 0; j < touches.length; j++) {
+
+         /* store touch info on touchstart */
+         touchesInAction[ "$" + touches[j].identifier ] = {
+
+            identifier : touches[j].identifier,
+            pageX : touches[j].pageX,
+            pageY : touches[j].pageY
+         };
+    }
+}
+
+function touchEndHandler(event) {
+    var touches = event.changedTouches;
+
+    for(var j = 0; j < touches.length; j++) {
+
+        /* access stored touch info on touchend */
+        var theTouchInfo = touchesInAction[ "$" + touches[j].identifier ];
+        theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
+        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */  
+        mobileDirection = theTouchInfo.dy     
+        let dir
+        mobileDirection > 0 ? dir = -5 :  dir = 5
+        scroll(dir)
+    }
+
+   
+    /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
+
+}
+
+	const scroll = (dir) => {
+        
+        
+
+        // up postive down negtive for mobile reverse
+		if (dir > 0) {
 			if (count >= 5) {
 				setNewTop(2);
 				setCount(5);
 				setbottomCount(5);
 				return;
 			}
-		} else if (e.deltaY < 0) {
+		} else if (dir < 0) {
 			if (count < 0) {
 				setNewTop(4);
 
@@ -223,8 +265,8 @@ const Works = ({ setNewTop }) => {
 				return;
 			}
 		}
-		scroll1(e);
-		scroll2(e);
+		scroll1(dir);
+		scroll2(dir);
 	};
 
 	return (
@@ -232,11 +274,16 @@ const Works = ({ setNewTop }) => {
 			className='bg-[#111821] relative overflow-hidden scroll-hidden pb-2  h-[100vh] animation'
 			ref={workRef}
 			onWheel={(e) => {
-				scroll(e);
+                let dir
+				e.deltaY > 0 ? dir = 5 : dir = -5
+                scroll(dir);
 			}}
-			onTouchEnd={(e) => {                
-				scroll(e)
-			}}
+			onTouchStart={(e) => {                    
+                touchStartHandler(e)            	
+            }}
+            onTouchEnd={(e)=> {
+                touchEndHandler(e)
+            }}
 		>
 			<h1 className='absolute top-[24px] right-[12px] pr-[80px] text-[16px] leading-[22px] tracking-[0.5px] hidden lg:block text-[#EAE8E4] z-50'>
 				Selected works & Exploration{" "}
