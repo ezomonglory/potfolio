@@ -9,7 +9,7 @@ export default function Home() {
 	const [top, setTop] = useState(1);
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
-	const mainRef = useRef(null);
+	const mainRef = useRef();
 	const heightRef = useRef(1);
 
 	if (typeof window != "undefined") {
@@ -29,21 +29,24 @@ export default function Home() {
 		// // Go!
 		// path.style.strokeDashoffset = "0";
 	}
-
- 
+    
     useEffect(()=> {
-        window.screen.width < 768 ? setHeight(window.outerHeight) : setHeight(window.innerHeight);
-    }, [])
+        window.addEventListener("scroll", (e)=> {            
+            console.log(e)
+        })
+    })
+  
 
-	const scroll = (num) => {        
+	const scroll = (num) => {      
+        
         if (num === 1 ){
             ref.current = setInterval(() => {          
                 if (
                     Math.abs(parseInt(mainRef.current.style.marginTop.replace("px", ""))) >=
-                    (height * num)
+                    (mainRef.current.clientHeight * num)
                 ) {                    
                     clearInterval(ref.current);
-                    mainRef.current.style.marginTop = `-${height * num}px`;               
+                    mainRef.current.style.marginTop = `-${mainRef.current.clientHeight * num}px`;               
                     return;
                 }            			
                 mainRef.current.style.marginTop = `${
@@ -53,22 +56,22 @@ export default function Home() {
         }
 
         if(num === 4){            
-            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) + height            
+            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) + mainRef.current.clientHeight            
             mainRef.current.style.top = `${newHeight}px`  
             if (parseInt(mainRef.current.style.top.replace("px", "")) >=
-            (height)) {                                  
-                mainRef.current.style.top = `+${(height )}px`   
+            (mainRef.current.clientHeight)) {                                  
+                mainRef.current.style.top = `+${(mainRef.current.clientHeight )}px`   
             }
             setTop(5)
             return;
         }
 
         if(num === 2){            
-            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) - height            
+            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) - mainRef.current.clientHeight            
             mainRef.current.style.top = `${newHeight}px`  
             if (Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
             (height)) {                                  
-                mainRef.current.style.top = `-${(height )}px`   
+                mainRef.current.style.top = `-${(mainRef.current.clientHeight )}px`   
             }
             return;
         }
@@ -95,9 +98,9 @@ export default function Home() {
 				className='fixed h-screen animation' 
 				id='main'
 				onWheel={()=>                                        
-                    scroll(top, height)}                	
+                    scroll(top, mainRef.current.clientHeight)}                	
 				onTouchMove={() => {
-					scroll(top, height);
+					window.onwheel()
 				}}
 				
 				style={{

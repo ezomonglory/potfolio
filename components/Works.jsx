@@ -206,7 +206,7 @@ const Works = ({ setNewTop }) => {
 	};
 
 	const scroll = (e) => {
-        console.log(e.deltaY);
+        console.log(workRef);
 		if (e.deltaY > 0) {
 			if (count >= 5) {
 				setNewTop(2);
@@ -234,8 +234,8 @@ const Works = ({ setNewTop }) => {
 			onWheel={(e) => {
 				scroll(e);
 			}}
-			onScroll={(e) => {
-				scroll(e);
+			onTouchMove={(e) => {
+				window.onwheel()
 			}}
 		>
 			<h1 className='absolute top-[24px] right-[12px] pr-[80px] text-[16px] leading-[22px] tracking-[0.5px] hidden lg:block text-[#EAE8E4] z-50'>
