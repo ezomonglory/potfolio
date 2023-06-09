@@ -29,11 +29,7 @@ export default function Home() {
 		// // Go!
 		// path.style.strokeDashoffset = "0";
 	}
-    
-    useEffect(()=> {
-        mainRef.current.addEventListener("touchstart", touchStartHandler, false);
-        mainRef.current.addEventListener("touchend", touchEndHandler, false);        
-    })
+  
 
     
 
@@ -135,9 +131,12 @@ function touchEndHandler(event) {
 				id='main'
 				onWheel={()=>                                        
                     scroll(top, mainRef.current.clientHeight)}                	
-				// onTouch={() => {                    
-				// 	scroll(top, mainRef.current.clientHeight)}                	
-				// }
+				onTouchStart={() => {                    
+					touchStartHandler()            	
+				}}
+                onTouchEnd={()=> {
+                    touchEndHandler()
+                }}
 				
 				style={{
 					marginTop: '0px',
