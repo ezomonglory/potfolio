@@ -64,7 +64,7 @@ const LeftSideWorks = ({ count, bottomCount }) => {
 							alt={"image"}
 							className={` ${
 								newCount === i
-									? "work-border hidden md:block "
+									? "work-border hidden md:block"
 									: "opacity-20 work-border hidden md:block fade "
 							}`}
 						/>
@@ -76,7 +76,7 @@ const LeftSideWorks = ({ count, bottomCount }) => {
 							alt={"image"}
 							className={` ${
 								newCount + 1 === i
-									? "work-border md:hidden block "
+									? "work-border md:hidden block absolute h-[300px] "
 									: "opacity-20 work-border md:hidden block fade "
 							}`}
 						/>

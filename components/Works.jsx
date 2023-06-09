@@ -237,6 +237,7 @@ function touchEndHandler(event) {
         let dir
         mobileDirection > 0 ? dir = -5 :  dir = 5
         scroll(dir)
+        scroll(dir)
     }
 
    
