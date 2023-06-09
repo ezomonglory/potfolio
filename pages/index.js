@@ -32,7 +32,7 @@ export default function Home() {
 
  
     useEffect(()=> {
-        window.screen.width < 768 ? setHeight(window.innerHeight) : setHeight(window.innerHeight);
+        window.screen.width < 768 ? setHeight(window.outerHeight) : setHeight(window.innerHeight);
     }, [])
 
 	const scroll = (num) => {        
@@ -96,7 +96,7 @@ export default function Home() {
 				id='main'
 				onWheel={()=>                                        
                     scroll(top, height)}                	
-				onScroll={() => {
+				onTouchMove={() => {
 					scroll(top, height);
 				}}
 				
