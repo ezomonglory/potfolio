@@ -10,7 +10,7 @@ export default function Home() {
 	const [height, setHeight] = useState(0);
 	const ref = useRef(null);
 	const mainRef = useRef(null);
-	const sectionRef = useRef(1);
+	const heightRef = useRef(1);
 
 	if (typeof window != "undefined") {
 		// var path = document.querySelector(".squiggle-animated path");
@@ -30,54 +30,56 @@ export default function Home() {
 		// path.style.strokeDashoffset = "0";
 	}
 
-    // const Pscroll = (num) => {
-    //      console.log("calll")
-    //     let topp = mainRef.current.style.top
-    //     ref.current = setInterval(() => {
-	// 		if (
-	// 			Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
-	// 			(window.innerHeight * num)
-	// 		) {
-	// 			clearInterval(ref.current);
-	// 			mainRef.current.style.top = `-${window.innerHeight * num}px`;
-	// 			return;
-	// 		}
+ 
+    useEffect(()=> {
+        window.screen.width < 768 ? setHeight(window.innerHeight) : setHeight(window.innerHeight);
+    }, [])
 
-    //         console.log(parseInt(mainRef.current.style.top.replace("px", "")) - 50)
-	// 		console.log(
-	// 		    Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) ,
-	// 		    window.innerHeight
-	// 		);
-    //         let T = Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) + window.innerHeight
-    //         mainRef.current.style.top = `-${T}px`
-    //         console.log(mainRef.current.style.top, T)
+	const scroll = (num) => {        
+        if (num === 1 ){
+            ref.current = setInterval(() => {          
+                if (
+                    Math.abs(parseInt(mainRef.current.style.marginTop.replace("px", ""))) >=
+                    (height * num)
+                ) {                    
+                    clearInterval(ref.current);
+                    mainRef.current.style.marginTop = `-${height * num}px`;               
+                    return;
+                }            			
+                mainRef.current.style.marginTop = `${
+                    parseInt(mainRef.current.style.marginTop.replace("px", "")) - 50
+                }px`;
+            }, 50);
+        }
 
-	// 	}, 50);
-    // }
+        if(num === 4){            
+            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) + height            
+            mainRef.current.style.top = `${newHeight}px`  
+            if (parseInt(mainRef.current.style.top.replace("px", "")) >=
+            (height)) {                                  
+                mainRef.current.style.top = `+${(height )}px`   
+            }
+            setTop(5)
+            return;
+        }
 
-	const scroll = (num) => {
-		console.log(top, num);
-		ref.current = setInterval(() => {
-			if (
-				Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
-				(window.innerHeight * num)
-			) {
-				clearInterval(ref.current);
-				mainRef.current.style.top = `-${window.innerHeight * num}px`;
-				return;
-			}
-
-            console.log(parseInt(mainRef.current.style.top.replace("px", "")) - 50)
-			console.log(
-			    Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) ,
-			    window.innerHeight
-			);
-			mainRef.current.style.top = `${
-				parseInt(mainRef.current.style.top.replace("px", "")) - 50
-			}px`;
-		}, 50);
-        console.log(mainRef.current.style.top);
-        // return () => clearInterval(ref.current)
+        if(num === 2){            
+            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) - height            
+            mainRef.current.style.top = `${newHeight}px`  
+            if (Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
+            (height)) {                                  
+                mainRef.current.style.top = `-${(height )}px`   
+            }
+            return;
+        }
+        if(num === 3){                       
+            mainRef.current.style.top = `0px`   
+            return;
+        }
+		if (top === 5) {
+            mainRef.current.style.top = `0px`   
+            return;
+        }
 	};
 
 	return (
@@ -90,26 +92,22 @@ export default function Home() {
 
 			<main
 				ref={mainRef}
-				className={`fixed h-screen animation `}
+				className='fixed h-screen animation' 
 				id='main'
-				onWheel={() => {
-					if (top === 1) {
-						scroll(1);
-					} else if (top === 2) {					
-                        mainRef.current.classList.add('height')
-					}
-				}}
+				onWheel={()=>                                        
+                    scroll(top, height)}                	
 				onScroll={() => {
-					scroll(top);
+					scroll(top, height);
 				}}
-				onTouchMove={() => scroll(top)}
+				onTouchMove={() => scroll(top, height)}
 				style={{
-					top: "0px",                    
+					marginTop: '0px',
+                    top:'0px',
 				}}
-			>
+			>                        
 				<HomePage />
 				<Works setNewTop={setTop} />
-				<Footer />
+				<Footer setNewTop={setTop}/>
 			</main>
 		</div>
 	);

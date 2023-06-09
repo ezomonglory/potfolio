@@ -3,19 +3,18 @@ import React, { useEffect, useRef } from 'react'
 
 const FooterMid = () => {
 
-    const textRef = useRef()
-    console.log(typeof window)
+    const textRef = useRef()    
     if (typeof window !== "undefined"){
         const text = document.getElementById("text")
         setInterval(()=>{
             text.textContent += "Got a gig for me? Hit me up."
-        }, 1000)
+        }, 100)
         
 
         const textMobile = document.getElementById("textMobile")
         setInterval(()=>{
             textMobile.textContent += "Got a gig for me? Hit me up."
-        }, 1000) 
+        }, 100) 
 
   
     }

@@ -109,6 +109,22 @@ body{
     transition: all ease-in-out 2s;
 }
 
+@keyframes fade-in {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opactiy:0.5;
+    }
+    100%{
+        opacity:0.2;
+    }
+}
+
+.fade{
+    animation: fade-in 2s ease-in ;
+}
+
 
 
 @media (min-height:800px){
@@ -194,6 +210,6 @@ body{
     }
 }
 
-.height{
+/* .height{
     top:-1334px !important;
-}
+} */
