@@ -131,11 +131,11 @@ function touchEndHandler(event) {
 				id='main'
 				onWheel={()=>                                        
                     scroll(top, mainRef.current.clientHeight)}                	
-				onTouchStart={() => {                    
-					touchStartHandler()            	
+				onTouchStart={(e) => {                    
+					touchStartHandler(e)            	
 				}}
-                onTouchEnd={()=> {
-                    touchEndHandler()
+                onTouchEnd={(e)=> {
+                    touchEndHandler(e)
                 }}
 				
 				style={{
