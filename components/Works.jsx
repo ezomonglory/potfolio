@@ -235,7 +235,7 @@ const Works = ({ setNewTop }) => {
 				scroll(e);
 			}}
 			onTouchMove={(e) => {
-				window.onwheel()
+				window.onwheel(e)
 			}}
 		>
 			<h1 className='absolute top-[24px] right-[12px] pr-[80px] text-[16px] leading-[22px] tracking-[0.5px] hidden lg:block text-[#EAE8E4] z-50'>

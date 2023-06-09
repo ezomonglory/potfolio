@@ -100,7 +100,7 @@ export default function Home() {
 				onWheel={()=>                                        
                     scroll(top, mainRef.current.clientHeight)}                	
 				onTouchMove={() => {
-					window.onwheel()
+					mainRef.current.onwheel()
 				}}
 				
 				style={{
