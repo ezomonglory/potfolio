@@ -19,7 +19,7 @@
 			},
 
 			{
-				image: "/images/OjarhProperties.png",
+                image: "/images/crappo.png",
 			},
 
 			{

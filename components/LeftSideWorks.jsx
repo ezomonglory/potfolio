@@ -76,7 +76,7 @@ const LeftSideWorks = ({ count, bottomCount }) => {
 							alt={"image"}
 							className={` ${
 								newCount + 1 === i
-									? "work-border md:hidden block  h-[300px] "
+									? "work-border md:hidden block  h-[280px] "
 									: "opacity-20 work-border md:hidden block fade "
 							}`}
 						/>
