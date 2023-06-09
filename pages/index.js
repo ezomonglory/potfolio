@@ -11,6 +11,8 @@ export default function Home() {
 	const ref = useRef(null);
 	const mainRef = useRef();
 	const heightRef = useRef(1);
+    var ts;
+
 
 	if (typeof window != "undefined") {
 		// var path = document.querySelector(".squiggle-animated path");
@@ -28,46 +30,23 @@ export default function Home() {
 		// 	"stroke-dashoffset 2s ease-in-out";
 		// // Go!
 		// path.style.strokeDashoffset = "0";
+      
 	}
+     
+    // mainRef.current.bind('touchstart', function (e){
+    //     ts = e.originalEvent.touches[0].clientY;
+    //  });
+     
+    //  mainRef.current.bind('touchend', function (e){
+    //     var te = e.originalEvent.changedTouches[0].clientY;
+    //     if(ts > te){
+    //        alert("up")
+    //     }else {
+    //        alert("down")
+    //     }
+    //  });
   
-
     
-
-
-
-var touchesInAction = {};
-
-function touchStartHandler(event) {
-    var touches = event.changedTouches;
-
-    for(var j = 0; j < touches.length; j++) {
-
-         /* store touch info on touchstart */
-         touchesInAction[ "$" + touches[j].identifier ] = {
-
-            identifier : touches[j].identifier,
-            pageX : touches[j].pageX,
-            pageY : touches[j].pageY
-         };
-    }
-}
-
-function touchEndHandler(event) {
-    var touches = event.changedTouches;
-
-    for(var j = 0; j < touches.length; j++) {
-
-        /* access stored touch info on touchend */
-        var theTouchInfo = touchesInAction[ "$" + touches[j].identifier ];
-        theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
-        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */
-        alert(theTouchInfo.dy)
-    }
-
-    /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
-
-}
-  
 
 	const scroll = (num) => {      
         
@@ -130,14 +109,10 @@ function touchEndHandler(event) {
 				className='fixed h-screen animation' 
 				id='main'
 				onWheel={()=>                                        
-                    scroll(top, mainRef.current.clientHeight)}                	
-				onTouchStart={(e) => {                    
-					touchStartHandler(e)            	
-				}}
-                onTouchEnd={(e)=> {
-                    scroll(top, mainRef.current.clientHeight)
-                    touchEndHandler(e)
-                }}
+                    scroll(top, mainRef.current.clientHeight)}  
+                    onTouchStart={()=> {
+                        alert("dsds")
+                    }}              					
 				
 				style={{
 					marginTop: '0px',
