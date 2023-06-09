@@ -99,10 +99,9 @@ export default function Home() {
 				id='main'
 				onWheel={()=>                                        
                     scroll(top, mainRef.current.clientHeight)}                	
-				onTouchMove={() => {
-                    alert("he")                    
-					mainRef.current.wheel()
-				}}
+				onTouchMove={() => {                    
+					scroll(top, mainRef.current.clientHeight)}                	
+				}
 				
 				style={{
 					marginTop: '0px',
