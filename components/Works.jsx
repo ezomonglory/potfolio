@@ -27,7 +27,7 @@ const Works = ({ setNewTop }) => {
 	}, []);
 
 	const scroll1 = (e) => {
-		console.log(window.screen.width);
+		
 		if (e.deltaY > 0) {
 			console.log(count);
 			if (count >= WorksImage.length - 2) {
@@ -206,6 +206,7 @@ const Works = ({ setNewTop }) => {
 	};
 
 	const scroll = (e) => {
+        console.log(e.deltaY);
 		if (e.deltaY > 0) {
 			if (count >= 5) {
 				setNewTop(2);
@@ -233,7 +234,9 @@ const Works = ({ setNewTop }) => {
 			onWheel={(e) => {
 				scroll(e);
 			}}
-			onTouchMove={scroll}
+			onTouchMove={(e) => {
+				scroll(e);
+			}}
 		>
 			<h1 className='absolute top-[24px] right-[12px] pr-[80px] text-[16px] leading-[22px] tracking-[0.5px] hidden lg:block text-[#EAE8E4] z-50'>
 				Selected works & Exploration{" "}
