@@ -234,8 +234,7 @@ const Works = ({ setNewTop }) => {
 			onWheel={(e) => {
 				scroll(e);
 			}}
-			onTouchMove={(e) => {
-                alert(e)
+			onTouchMove={(e) => {                
 				scroll(e)
 			}}
 		>
