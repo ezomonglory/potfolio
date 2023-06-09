@@ -99,7 +99,7 @@ export default function Home() {
 				onScroll={() => {
 					scroll(top, height);
 				}}
-				onTouchMove={() => scroll(top, height)}
+				
 				style={{
 					marginTop: '0px',
                     top:'0px',
