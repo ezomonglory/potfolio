@@ -73,7 +73,7 @@ const LeftSideWorks = ({ count, bottomCount }) => {
 							src={work.image}
 							width={200}
 							height={296}
-							alt={"image"}
+							alt={`${i} image`}
 							className={` ${
 								newCount + 1 === i
 									? "work-border md:hidden block  h-[280px] "
