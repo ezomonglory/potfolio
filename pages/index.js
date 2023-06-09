@@ -135,6 +135,7 @@ function touchEndHandler(event) {
 					touchStartHandler(e)            	
 				}}
                 onTouchEnd={(e)=> {
+                    scroll(top, mainRef.current.clientHeight)
                     touchEndHandler(e)
                 }}
 				
