@@ -40,7 +40,7 @@ function touchEndHandler(event) {
         mobileDirection = theTouchInfo.dy      
     }
 
-    if (mobileDirection < 0){
+    if (mobileDirection > 0){
         scroll()
     }
     /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
