@@ -15,11 +15,11 @@
 			},
 
 			{
-				image: "/images/Forkify.png",
+				image: "/images/OjarhProperties.png",
 			},
 
 			{
-                image: "/images/OjarhProperties.png",
+                image: "/images/Forkify.png",
 			},
 
 			{
