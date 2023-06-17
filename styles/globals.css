@@ -39,12 +39,17 @@
 	font-style: normal;
 }
 
+html {
+	overscroll-behavior-y: contain;
+}
+
 .font-lyt {
 	font-family: forma_djr_bannerlight;
 }
 
 body {
 	font-family: forma_djr_bannerregular;
+	overscroll-behavior-y: contain;
 }
 
 .font-md {
@@ -157,12 +162,10 @@ body {
 	.max-leading {
 		display: block !important;
 	}
-
-	
 }
 
 .bounce {
-    margin-bottom: 3rem;
+	margin-bottom: 3rem;
 }
 
 @media (max-height: 799px) {
@@ -184,9 +187,8 @@ body {
 	}
 }
 
-@media (max-height: 699px) {	
-
-    .center {
+@media (max-height: 699px) {
+	.center {
 		position: absolute;
 		left: 50%;
 		top: 40%;
@@ -195,11 +197,10 @@ body {
 }
 
 @media (max-height: 699px) and (min-width: 768px) {
-    .bounce {
-        margin-bottom: 1rem;
-    }
+	.bounce {
+		margin-bottom: 1rem;
+	}
 
-    
 	.high-screen {
 		min-height: 10% !important;
 		flex-grow: 0 !important;
