@@ -59,9 +59,9 @@ const Footer = ({ setNewTop }) => {
 			mobileDirection = theTouchInfo.dy;
 		}
 
-		if (mobileDirection > 0) {
-			scroll();
-		}
+		let dir;
+			mobileDirection > 0 ? (dir = -mobileDirection) : (dir = mobileDirection);
+			scroll(dir);
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 	}
 

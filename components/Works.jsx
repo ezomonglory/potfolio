@@ -255,11 +255,9 @@ const Works = ({ setNewTop }) => {
 				theTouchInfo.pageY; /* y-distance moved since touchstart */
 			mobileDirection = theTouchInfo.dy;
 			let dir;
-			mobileDirection > 0 ? (dir = -5) : (dir = 5);
+			mobileDirection > 0 ? (dir = -mobileDirection) : (dir = mobileDirection);
 			scroll(dir);
-			setTimeout(() => {
-				scroll(dir);
-			}, 200);
+			
 		}
 
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
