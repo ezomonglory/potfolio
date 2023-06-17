@@ -290,7 +290,7 @@ const Works = ({ setNewTop }) => {
 	//     }
 
     const mobileScroll = (dir) => {
-        
+        alert(dir)
 	
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
