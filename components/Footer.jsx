@@ -28,6 +28,33 @@ const Footer = ({ setNewTop }) => {
 			}
 		}
 	};
+
+    const mobileScroll = (dir) => {
+        
+	
+		const divElement = workRef.current.children;
+		const childHeight = divElement[2].children[0];
+		if (dir < 0) {
+			if (childHeight.style.top.replace("px", "") > -1700) {
+				childHeight.style.top = `${
+					childHeight.style.top.replace("px", "") - dir
+				}px `;
+			} else {
+				setNewTop(2);
+			}
+		} else if (dir > 0) {
+			if (childHeight.style.top.replace("px", "") <= 0) {
+				childHeight.style.top = `${
+					childHeight.style.top.replace("px", "") - dir
+				}px `;
+			} else {
+				console.log("reached here");
+				setNewTop(4);
+			}
+		}
+	
+
+    }
 	var touchesInAction = {};
 	var mobileDirection;
 
@@ -60,7 +87,7 @@ const Footer = ({ setNewTop }) => {
 		}
 
 		
-			scroll(mobileDirection);
+			mobileScroll(mobileDirection);
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 	}
 

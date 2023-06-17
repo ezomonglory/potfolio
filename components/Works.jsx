@@ -253,8 +253,9 @@ const Works = ({ setNewTop }) => {
 			theTouchInfo.dy =
 				touches[j].pageY -
 				theTouchInfo.pageY; /* y-distance moved since touchstart */
-			mobileDirection = theTouchInfo.dy;		
-			scroll(mobileDirection);
+			mobileDirection = theTouchInfo.dy;
+
+			mobileScroll(mobileDirection)
 			
 		}
 
@@ -287,6 +288,51 @@ const Works = ({ setNewTop }) => {
 	// 			}
 	// 		}
 	//     }
+
+    const mobileScroll = (dir) => {
+        
+	
+		const divElement = workRef.current.children;
+		const childHeight = divElement[2].children[0];
+		if (dir < 0) {
+			if (childHeight.style.top.replace("px", "") > -1700) {
+				childHeight.style.top = `${
+					childHeight.style.top.replace("px", "") - dir
+				}px `;
+			} else {
+				setNewTop(2);
+			}
+		} else if (dir > 0) {
+			if (childHeight.style.top.replace("px", "") <= 0) {
+				childHeight.style.top = `${
+					childHeight.style.top.replace("px", "") - dir
+				}px `;
+			} else {
+				console.log("reached here");
+				setNewTop(4);
+			}
+		}
+
+		// up postive down negtive for mobile reverse
+		// if (dir > 0) {
+		// 	if (count >= 5) {
+		// 		setNewTop(2);
+		// 		setCount(5);
+		// 		setbottomCount(5);
+		// 		return;
+		// 	}
+		// } else if (dir < 0) {
+		// 	if (count < 0) {
+		// 		setNewTop(4);
+		// 		setCount(countee);
+		// 		setbottomCount(countee);
+		// 		return;
+		// 	}
+		// }
+		// scroll1(dir);
+		// scroll2(dir);	
+
+    }
 
 	const scroll = (dir) => {
 		const divElement = workRef.current.children;
