@@ -37,7 +37,7 @@ const Footer = ({ setNewTop }) => {
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") - dir
+					childHeight.style.top.replace("px", "") + dir
 				}px `;
 			} else {
 				setNewTop(2);
@@ -45,7 +45,7 @@ const Footer = ({ setNewTop }) => {
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") - dir
+					childHeight.style.top.replace("px", "") + dir
 				}px `;
 			} else {
 				console.log("reached here");
