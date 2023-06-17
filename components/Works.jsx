@@ -289,15 +289,14 @@ const Works = ({ setNewTop }) => {
 	// 		}
 	//     }
 
-    const mobileScroll = (dir) => {
-        alert(dir)
+    const mobileScroll = (dir) => {        
 	
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") + Maths.abs(parseInt(dir))
+					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				setNewTop(2);
@@ -305,7 +304,7 @@ const Works = ({ setNewTop }) => {
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") + Maths.abs(parseInt(dir))
+					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				console.log("reached here");
