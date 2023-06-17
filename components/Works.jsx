@@ -253,10 +253,8 @@ const Works = ({ setNewTop }) => {
 			theTouchInfo.dy =
 				touches[j].pageY -
 				theTouchInfo.pageY; /* y-distance moved since touchstart */
-			mobileDirection = theTouchInfo.dy;
-			let dir;
-			mobileDirection > 0 ? (dir = -mobileDirection) : (dir = mobileDirection);
-			scroll(dir);
+			mobileDirection = theTouchInfo.dy;		
+			scroll(mobileDirection);
 			
 		}
 
