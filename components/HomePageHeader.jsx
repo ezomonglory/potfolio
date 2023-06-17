@@ -15,10 +15,11 @@ const HomePageHeader = () => {
             {/* <Image src='./images/EG Logo.svg' width={28} height={24} alt='EG Logo' className="block sm:hidden" /> */}
 
 			<div className='hidden md:flex'>
-				<ul className='flex gap-[52px] leading-[22px] tracking-[0.5px] text-[16px] '>
-					<li>Resume</li>
+				<ul className='flex gap-[52px] leading-[22px] tracking-[0.5px] text-[16px] lg:text-[18px] items-center'>
 					<li>Works</li>
-					<li>About Me</li>
+					<li className="">About Me</li>
+					<li>Resume</li>
+					<li className="">Contact Me</li>
 				</ul>
 			</div>
 			<Image

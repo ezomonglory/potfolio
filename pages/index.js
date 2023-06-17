@@ -11,7 +11,7 @@ export default function Home() {
 	const ref = useRef(null);
 	const mainRef = useRef();
 	const heightRef = useRef(1);
-    let mobileDirection;
+	let mobileDirection;
 	if (typeof window != "undefined") {
 		// var path = document.querySelector(".squiggle-animated path");
 		// var length = path.getTotalLength();
@@ -29,95 +29,100 @@ export default function Home() {
 		// // Go!
 		// path.style.strokeDashoffset = "0";
 	}
-  
 
-    
+	var touchesInAction = {};
 
+	function touchStartHandler(event) {
+		var touches = event.changedTouches;
 
+		for (var j = 0; j < touches.length; j++) {
+			/* store touch info on touchstart */
+			touchesInAction["$" + touches[j].identifier] = {
+				identifier: touches[j].identifier,
+				pageX: touches[j].pageX,
+				pageY: touches[j].pageY,
+			};
+		}
+	}
 
-var touchesInAction = {};
+	function touchEndHandler(event) {
+		var touches = event.changedTouches;
 
-function touchStartHandler(event) {
-    var touches = event.changedTouches;
+		for (var j = 0; j < touches.length; j++) {
+			/* access stored touch info on touchend */
+			var theTouchInfo = touchesInAction["$" + touches[j].identifier];
+			theTouchInfo.dx =
+				touches[j].pageX -
+				theTouchInfo.pageX; /* x-distance moved since touchstart */
+			theTouchInfo.dy =
+				touches[j].pageY -
+				theTouchInfo.pageY; /* y-distance moved since touchstart */
+			mobileDirection = theTouchInfo.dy;
+		}
 
-    for(var j = 0; j < touches.length; j++) {
+		if (mobileDirection < 0) {
+			scroll(top, mainRef.current.clientHeight);
+		}
+		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
+	}
 
-         /* store touch info on touchstart */
-         touchesInAction[ "$" + touches[j].identifier ] = {
+	const scroll = (num) => {
+		if (num === 1) {
+			ref.current = setInterval(() => {
+				if (
+					Math.abs(
+						parseInt(mainRef.current.style.marginTop.replace("px", "")),
+					) >=
+					mainRef.current.clientHeight * num
+				) {
+					clearInterval(ref.current);
+					mainRef.current.style.marginTop = `-${
+						mainRef.current.clientHeight * num
+					}px`;
+					return;
+				}
+				mainRef.current.style.marginTop = `${
+					parseInt(mainRef.current.style.marginTop.replace("px", "")) - 50
+				}px`;
+			}, 50);
+		}
 
-            identifier : touches[j].identifier,
-            pageX : touches[j].pageX,
-            pageY : touches[j].pageY
-         };
-    }
-}
+		if (num === 4) {
+			const newHeight =
+				parseInt(mainRef.current.style.top.replace("px", "")) +
+				mainRef.current.clientHeight;
+			mainRef.current.style.top = `${newHeight}px`;
+			if (
+				parseInt(mainRef.current.style.top.replace("px", "")) >=
+				mainRef.current.clientHeight
+			) {
+				mainRef.current.style.top = `+${mainRef.current.clientHeight}px`;
+			}
+			setTop(5);
+			return;
+		}
 
-function touchEndHandler(event) {
-    var touches = event.changedTouches;
-
-    for(var j = 0; j < touches.length; j++) {
-
-        /* access stored touch info on touchend */
-        var theTouchInfo = touchesInAction[ "$" + touches[j].identifier ];
-        theTouchInfo.dx = touches[j].pageX - theTouchInfo.pageX;  /* x-distance moved since touchstart */
-        theTouchInfo.dy = touches[j].pageY - theTouchInfo.pageY;  /* y-distance moved since touchstart */  
-        mobileDirection = theTouchInfo.dy      
-    }
-
-    if (mobileDirection < 0){
-        scroll(top, mainRef.current.clientHeight)
-    }
-    /* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
-
-}
-  
-
-	const scroll = (num) => {      
-        
-        if (num === 1 ){
-            ref.current = setInterval(() => {          
-                if (
-                    Math.abs(parseInt(mainRef.current.style.marginTop.replace("px", ""))) >=
-                    (mainRef.current.clientHeight * num)
-                ) {                    
-                    clearInterval(ref.current);
-                    mainRef.current.style.marginTop = `-${mainRef.current.clientHeight * num}px`;               
-                    return;
-                }            			
-                mainRef.current.style.marginTop = `${
-                    parseInt(mainRef.current.style.marginTop.replace("px", "")) - 50
-                }px`;
-            }, 50);
-        }
-
-        if(num === 4){            
-            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) + mainRef.current.clientHeight            
-            mainRef.current.style.top = `${newHeight}px`  
-            if (parseInt(mainRef.current.style.top.replace("px", "")) >=
-            (mainRef.current.clientHeight)) {                                  
-                mainRef.current.style.top = `+${(mainRef.current.clientHeight )}px`   
-            }
-            setTop(5)
-            return;
-        }
-
-        if(num === 2){            
-            const newHeight = parseInt(mainRef.current.style.top.replace("px", "")) - mainRef.current.clientHeight            
-            mainRef.current.style.top = `${newHeight}px`  
-            if (Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
-            (height)) {                                  
-                mainRef.current.style.top = `-${(mainRef.current.clientHeight )}px`   
-            }
-            return;
-        }
-        if(num === 3){                       
-            mainRef.current.style.top = `0px`   
-            return;
-        }
+		if (num === 2) {
+			const newHeight =
+				parseInt(mainRef.current.style.top.replace("px", "")) -
+				mainRef.current.clientHeight;
+			mainRef.current.style.top = `${newHeight}px`;
+			if (
+				Math.abs(parseInt(mainRef.current.style.top.replace("px", ""))) >=
+				height
+			) {
+				mainRef.current.style.top = `-${mainRef.current.clientHeight}px`;
+			}
+			return;
+		}
+		if (num === 3) {
+			mainRef.current.style.top = `0px`;
+			return;
+		}
 		if (top === 5) {
-            mainRef.current.style.top = `0px`   
-            return;
-        }
+			mainRef.current.style.top = `0px`;
+			return;
+		}
 	};
 
 	return (
@@ -130,25 +135,28 @@ function touchEndHandler(event) {
 
 			<main
 				ref={mainRef}
-				className='fixed h-screen animation' 
+				className='fixed h-screen animation'
 				id='main'
-				onWheel={()=>                                        
-                    scroll(top, mainRef.current.clientHeight)}                	
-				onTouchStart={(e) => {                    
-					touchStartHandler(e)            	
+				onWheel={() => {
+					console.log("dsds");
+					scroll(top, mainRef.current.clientHeight);
 				}}
-                onTouchEnd={(e)=> {
-                    touchEndHandler(e)
-                }}
-				
+				onTouchStart={(e) => {
+					touchStartHandler(e);
+				}}
+				onTouchEnd={(e) => {
+					touchEndHandler(e);
+				}}
 				style={{
-					marginTop: '0px',
-                    top:'0px',
+					marginTop: "0px",
+					top: "0px",
 				}}
-			>                        
-				<HomePage />
+			>
+				<HomePage scroll={scroll} />
 				<Works setNewTop={setTop} />
-				<Footer setNewTop={setTop}/>
+				<div className="relative w-full h-full overflow-hidden">
+                <Footer setNewTop={setTop} />
+                </div>
 			</main>
 		</div>
 	);
