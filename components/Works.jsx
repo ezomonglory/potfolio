@@ -282,6 +282,9 @@ const Works = ({ setNewTop }) => {
 	const mobileScroll = (dir) => {
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
+		let element;
+		element = divElement[2].children[0].children[0].children[4];
+		const rectVals = childHeight.getBoundingClientRect();
 		if (dir < 0) {
 			if (rectVals["bottom"] > -550) {
 				childHeight.style.top = `${
