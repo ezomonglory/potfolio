@@ -283,7 +283,7 @@ const Works = ({ setNewTop }) => {
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
 		if (dir < 0) {
-			if (childHeight.style.top.replace("px", "") > -1700) {
+			if (rectVals["bottom"] > -550) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
 					Math.abs(parseInt(dir))
@@ -299,8 +299,8 @@ const Works = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				alert("reached here");
 				setNewTop(4);
+				alert("reached here");
 			}
 		}
 		
