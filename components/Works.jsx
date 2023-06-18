@@ -296,11 +296,12 @@ const Works = ({ setNewTop }) => {
 		} else if (dir > 0) {
             alert(childHeight.style.top + "top", dir +"Dir")
 			if (childHeight.style.top.replace("px", "") <= 0) {
+                alert("entered")
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				console.log("reached here");
+				alert("reached here");
 				setNewTop(4);
 			}
 		}
