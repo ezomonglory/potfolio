@@ -11,7 +11,7 @@ const FooterTop = () => {
 				alt='profile picture'
 				className='hidden md:block'
 			/> */}
-            <div className="w-[70%] sm:w-[300px]  lg:w-[40%] mx-auto h-[350px] lg:h-[488px] rounded-md overflow-hidden " style={{
+            <div className="hidden md:block w-[70%] sm:w-[300px]  lg:w-[40%] mx-auto h-[350px] lg:h-[488px] rounded-md overflow-hidden " style={{
                 backgroundImage:"url(/images/vector-logo.png)",
                 backgroundRepeat:"no-repeat",
                 backgroundSize:"contain",
@@ -20,13 +20,13 @@ const FooterTop = () => {
 
             </div>
 
-			{/* <Image
-				src='/images/EG PROFILE PICTURE 1.svg'
+			<Image
+				src='/images/vector-logo.png'
 				width={199}
 				height={201}
 				alt='profile picture'
-				className='md:hidden block !h-[201px]'
-			/> */}
+				className='md:hidden block !h-[201px] rounded-md'
+			/>
 			<div className='flex flex-col space-y-[16px] md:space-y-[24px] w-full md:w-[50%] items-start '>
 				<div className='flex flex-col space-y-[4px] md:space-y-[6px] border-2 border-transparent border-b-gray-400 pb-[16px]'>
 					<h1 className='text-[24px] md:text-[32px] leading-[35px] tracking-[0.5px] font-[500] text-[#111821] '>
