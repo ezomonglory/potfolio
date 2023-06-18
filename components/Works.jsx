@@ -288,7 +288,7 @@ const Works = ({ setNewTop }) => {
 			if (childHeight.style.top.replace("px", "") > -1700) {
                 alert("up")
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") - Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) - Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				setNewTop(2);
@@ -300,7 +300,7 @@ const Works = ({ setNewTop }) => {
                 alert("entered")
                 alert(childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir)))
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) + Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				alert("reached here");
