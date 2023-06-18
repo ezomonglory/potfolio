@@ -289,7 +289,7 @@ const Works = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				setNewTop(2);
+				setNewTop(4);
 			}
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
@@ -299,7 +299,7 @@ const Works = ({ setNewTop }) => {
 				}px `;
 			} else {
 				alert("reached here");
-				setNewTop(4);
+				setNewTop(2);
 			}
 		}
 
