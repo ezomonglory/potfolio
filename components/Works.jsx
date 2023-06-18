@@ -252,8 +252,7 @@ const Works = ({ setNewTop, Parentscroll }) => {
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 	}
 
-    const goToTop = () => {
-        alert("heeer")
+    const goToTop = () => {        
         Parentscroll(4)
     }
 
@@ -264,13 +263,12 @@ const Works = ({ setNewTop, Parentscroll }) => {
 		element = divElement[2].children[0].children[0].children[4];
 		const rectVals = childHeight.getBoundingClientRect();
 		if (dir < 0) {
-			if (rectVals["bottom"] > -150) {
+			if (rectVals["bottom"] > -50) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
 					Math.abs(parseInt(dir))
 				}px `;
-			} else {
-                alert("entered here")
+			} else {                
 				setNewTop(2);
 			}
 		} else if (dir > 0) {

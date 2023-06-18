@@ -16,8 +16,7 @@ const Footer = ({ setNewTop, Parentscroll }) => {
 			if (rectVals["bottom"] > 700) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - dir
-				}px `;
-				console.log("dsjkdsj", childHeight.style.top);
+				}px `;				
 			} else {
 			}
 		} else if (dir < 0) {
@@ -27,7 +26,7 @@ const Footer = ({ setNewTop, Parentscroll }) => {
 				}px `;
 			} else {
 				console.log("reached here");
-				setNewTop(4);
+				setNewTop(3);
 			}
 		}
 	};
@@ -35,7 +34,7 @@ const Footer = ({ setNewTop, Parentscroll }) => {
 	const mobileScroll = (dir) => {
 		const childHeight = footerRef.current;
 		if (dir < 0) {
-			if (childHeight.style.top.replace("px", "") > -1500) {
+			if (childHeight.style.top.replace("px", "") > -1400) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
 					Math.abs(parseInt(dir))
@@ -48,8 +47,7 @@ const Footer = ({ setNewTop, Parentscroll }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				alert("reached here");
-				setNewTop(4);
+				Parentscroll(3)
 			}
 		}
 	};
