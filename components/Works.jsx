@@ -289,7 +289,7 @@ const Works = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				setNewTop(4);
+				setNewTop(2);
 			}
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
@@ -299,28 +299,10 @@ const Works = ({ setNewTop }) => {
 				}px `;
 			} else {
 				alert("reached here");
-				setNewTop(2);
+				setNewTop(4);
 			}
 		}
-
-		// up postive down negtive for mobile reverse
-		// if (dir > 0) {
-		// 	if (count >= 5) {
-		// 		setNewTop(2);
-		// 		setCount(5);
-		// 		setbottomCount(5);
-		// 		return;
-		// 	}
-		// } else if (dir < 0) {
-		// 	if (count < 0) {
-		// 		setNewTop(4);
-		// 		setCount(countee);
-		// 		setbottomCount(countee);
-		// 		return;
-		// 	}
-		// }
-		// scroll1(dir);
-		// scroll2(dir);
+		
 	};
 
 	const scroll = (dir) => {
