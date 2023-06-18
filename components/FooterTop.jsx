@@ -21,7 +21,7 @@ const FooterTop = () => {
             </div>
 
 			<Image
-				src='/images/vector-logo.png'
+				src='/images/Devnaija.png'
 				width={199}
 				height={201}
 				alt='profile picture'

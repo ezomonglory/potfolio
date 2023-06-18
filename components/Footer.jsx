@@ -37,14 +37,14 @@ const Footer = ({ setNewTop, Parentscroll }) => {
 			if (childHeight.style.top.replace("px", "") > -1400) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
-					(Math.abs(parseInt(dir)) + 50)
+					(Math.abs(parseInt(dir)) + 100)
 				}px `;
 			}
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) +
-                    (Math.abs(parseInt(dir)) + 50)
+                    (Math.abs(parseInt(dir)) + 100)
 
 				}px `;
 			} else {
