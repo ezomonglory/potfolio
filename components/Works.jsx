@@ -286,7 +286,7 @@ const Works = ({ setNewTop }) => {
 		element = divElement[2].children[0].children[0].children[4];
 		const rectVals = childHeight.getBoundingClientRect();
 		if (dir < 0) {
-			if (rectVals["bottom"] > -550) {
+			if (rectVals["bottom"] > -150) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
 					Math.abs(parseInt(dir))

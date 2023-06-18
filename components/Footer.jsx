@@ -35,7 +35,7 @@ const Footer = ({ setNewTop }) => {
 	const mobileScroll = (dir) => {
 		const childHeight = footerRef.current;
 		if (dir < 0) {
-			if (childHeight.style.top.replace("px", "") > -1700) {
+			if (childHeight.style.top.replace("px", "") > -1500) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
 					Math.abs(parseInt(dir))
