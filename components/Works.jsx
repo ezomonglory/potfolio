@@ -252,32 +252,10 @@ const Works = ({ setNewTop }) => {
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 	}
 
-	//     const scroll2 = (dir) => {
-	//         const divElement = workRef.current.children;
-	// 		console.log(dir);
-	// 		const childHeight = divElement[2].children[0];
-	// 		if (dir > 0) {
-	// 			if (childHeight.style.top.replace("px", "") > -1700) {
-	// 				console.log(
-	// 					parseInt(childHeight.style.top.replace("px", "")) +
-	// 						Math.abs(parseInt(dir)),
-	// 				);
-	// 				childHeight.style.top = `${
-	// 					parseInt(childHeight.style.top.replace("px", "")) +
-	// 					Math.abs(parseInt(dir))
-	// 				}px `;
-	// 				// childHeight.style.top = `${-350 + 10}px `
-	// 			}
-	// 		} else if (dir < 0) {
-	// 			if (childHeight.style.top.replace("px", "") <= 0) {
-	// 				childHeight.style.top = `${
-	// 					childHeight.style.top.replace("px", "") - Math.abs(dir)
-	// 				}px `;
-	// 			} else {
-	// 				childHeight.style.top = "0px";
-	// 			}
-	// 		}
-	//     }
+    const goToTop = () => {
+        alert("heeer")
+        setNewTop(4);
+    }
 
 	const mobileScroll = (dir) => {
 		const divElement = workRef.current.children;
@@ -302,8 +280,7 @@ const Works = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				setNewTop(4);
-				alert("reached here");
+				goToTop()				
 			}
 		}
 		

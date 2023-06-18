@@ -91,7 +91,7 @@ const Footer = ({ setNewTop }) => {
 	return (
 		<div
 			ref={footerRef}
-			className='h-full absolute animation w-full '
+			className='h-full absolute animation w-full'
 			style={{
 				top: 0,
 			}}
