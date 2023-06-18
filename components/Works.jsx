@@ -266,7 +266,8 @@ const Works = ({ setNewTop, Parentscroll }) => {
 			if (rectVals["bottom"] > -50) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) -
-					Math.abs(parseInt(dir))
+					(Math.abs(parseInt(dir)) + 50)
+					
 				}px `;
 			} else {                
 				setNewTop(2);
@@ -275,7 +276,7 @@ const Works = ({ setNewTop, Parentscroll }) => {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
 					parseInt(childHeight.style.top.replace("px", "")) +
-					Math.abs(parseInt(dir))
+					(Math.abs(parseInt(dir)) + 50)				
 				}px `;
 			} else {
 				goToTop()				
