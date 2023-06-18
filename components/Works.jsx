@@ -289,6 +289,7 @@ const Works = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
+                alert("entered here")
 				setNewTop(2);
 			}
 		} else if (dir > 0) {
