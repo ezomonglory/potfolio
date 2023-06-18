@@ -294,7 +294,7 @@ const Works = ({ setNewTop }) => {
 				setNewTop(2);
 			}
 		} else if (dir > 0) {
-            alert(childHeight.style.top, dir)
+            alert(childHeight.style.top + "top", dir +"Dir")
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
