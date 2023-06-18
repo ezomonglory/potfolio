@@ -8,9 +8,9 @@ const Footer = ({ setNewTop }) => {
 	const footerRef = useRef();
 
 	const scroll = (dir) => {
-        const divElement = footerRef.current.children[2].children[1]
-        const rectVals = divElement.getBoundingClientRect()
-        console.log(rectVals["bottom"])
+		const divElement = footerRef.current.children[2].children[1];
+		const rectVals = divElement.getBoundingClientRect();
+		console.log(rectVals["bottom"]);
 		const childHeight = footerRef.current;
 		if (dir > 0) {
 			if (rectVals["bottom"] > 700) {
@@ -32,28 +32,27 @@ const Footer = ({ setNewTop }) => {
 		}
 	};
 
-    const mobileScroll = (dir) => {       
-			
-		const childHeight = footerRef.current
+	const mobileScroll = (dir) => {
+		const childHeight = footerRef.current;
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") - Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) -
+					Math.abs(parseInt(dir))
 				}px `;
-			} 
+			}
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
-					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) +
+					Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				console.log("reached here");
 				setNewTop(4);
 			}
 		}
-	
-
-    }
+	};
 	var touchesInAction = {};
 	var mobileDirection;
 
@@ -85,8 +84,7 @@ const Footer = ({ setNewTop }) => {
 			mobileDirection = theTouchInfo.dy;
 		}
 
-		
-			mobileScroll(mobileDirection);
+		mobileScroll(mobileDirection);
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
 	}
 

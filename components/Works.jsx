@@ -2,8 +2,8 @@ import React, { useCallback, useRef, useEffect, useState } from "react";
 import LeftSideWorks from "./LeftSideWorks";
 import { WorksData } from "../Data";
 
-const Works = ({ setNewTop }) => {	
-	const workRef = useRef(null);	
+const Works = ({ setNewTop }) => {
+	const workRef = useRef(null);
 	const leftRef = useRef();
 
 	const [count, setCount] = useState(0);
@@ -246,8 +246,7 @@ const Works = ({ setNewTop }) => {
 				theTouchInfo.pageY; /* y-distance moved since touchstart */
 			mobileDirection = theTouchInfo.dy;
 
-			mobileScroll(mobileDirection)
-			
+			mobileScroll(mobileDirection);
 		}
 
 		/* determine what gesture was performed, based on dx and dy (tap, swipe, one or two fingers etc. */
@@ -280,27 +279,23 @@ const Works = ({ setNewTop }) => {
 	// 		}
 	//     }
 
-    const mobileScroll = (dir) => {        
-	
+	const mobileScroll = (dir) => {
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
-                alert("up")
 				childHeight.style.top = `${
-					parseInt(childHeight.style.top.replace("px", "")) - Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) -
+					Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				setNewTop(2);
 			}
 		} else if (dir > 0) {
-            alert(childHeight.style.top + "top")
-            alert( dir +"Dir")
 			if (childHeight.style.top.replace("px", "") <= 0) {
-                alert("entered")
-                alert(childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir)))
 				childHeight.style.top = `${
-					parseInt(childHeight.style.top.replace("px", "")) + Math.abs(parseInt(dir))
+					parseInt(childHeight.style.top.replace("px", "")) +
+					Math.abs(parseInt(dir))
 				}px `;
 			} else {
 				alert("reached here");
@@ -325,21 +320,19 @@ const Works = ({ setNewTop }) => {
 		// 	}
 		// }
 		// scroll1(dir);
-		// scroll2(dir);	
-
-    }
+		// scroll2(dir);
+	};
 
 	const scroll = (dir) => {
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
-        let element        
-        element  = divElement[2].children[0].children[0].children[4];        
-        const rectVals = childHeight.getBoundingClientRect();
-        console.log(rectVals["bottom"])
-            
-        
+		let element;
+		element = divElement[2].children[0].children[0].children[4];
+		const rectVals = childHeight.getBoundingClientRect();
+		console.log(rectVals["bottom"]);
+
 		if (dir > 0) {
-			if (rectVals["bottom"] > -550 ) {
+			if (rectVals["bottom"] > -550) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - dir
 				}px `;
