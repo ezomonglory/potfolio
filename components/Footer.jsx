@@ -48,7 +48,7 @@ const Footer = ({ setNewTop }) => {
 					Math.abs(parseInt(dir))
 				}px `;
 			} else {
-				console.log("reached here");
+				alert("reached here");
 				setNewTop(4);
 			}
 		}
