@@ -298,6 +298,7 @@ const Works = ({ setNewTop }) => {
             alert( dir +"Dir")
 			if (childHeight.style.top.replace("px", "") <= 0) {
                 alert("entered")
+                alert(childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir)))
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
 				}px `;
