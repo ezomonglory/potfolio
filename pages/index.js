@@ -153,7 +153,7 @@ export default function Home() {
 				}}
 			>
 				<HomePage scroll={scroll} />
-				<Works setNewTop={setTop} />
+				<Works setNewTop={setTop} Parentscroll={scroll} />
 				<div className="relative w-full h-full overflow-hidden">
                 <Footer setNewTop={setTop} />
                 </div>

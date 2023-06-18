@@ -4,7 +4,7 @@ import FooterMid from "./FooterMid";
 import FooterTop from "./FooterTop";
 import Svg from "./Svg";
 
-const Footer = ({ setNewTop }) => {
+const Footer = ({ setNewTop, Parentscroll }) => {
 	const footerRef = useRef();
 
 	const scroll = (dir) => {

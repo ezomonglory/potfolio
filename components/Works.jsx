@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useEffect, useState } from "react";
 import LeftSideWorks from "./LeftSideWorks";
 import { WorksData } from "../Data";
 
-const Works = ({ setNewTop }) => {
+const Works = ({ setNewTop, Parentscroll }) => {
 	const workRef = useRef(null);
 	const leftRef = useRef();
 
@@ -254,7 +254,7 @@ const Works = ({ setNewTop }) => {
 
     const goToTop = () => {
         alert("heeer")
-        setNewTop(4);
+        Parentscroll(4)
     }
 
 	const mobileScroll = (dir) => {
