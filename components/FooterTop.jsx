@@ -3,7 +3,7 @@ import React from "react";
 
 const FooterTop = () => {
 	return (
-		<div className=' flex flex-col md:flex-row gap-[20px] md:gap-[132px] px-[20px] md:px-[80px]'>
+		<div className=' flex flex-col lg:flex-row gap-[20px] lg:gap-[132px] px-[20px] lg:px-[80px] items-center justify-center'>
 			{/* <Image
 				src='/images/vector-logo.png'
 				width={439}
@@ -11,10 +11,11 @@ const FooterTop = () => {
 				alt='profile picture'
 				className='hidden md:block'
 			/> */}
-            <div className="w-[70%]  lg:w-[40%] mx-auto h-[350px] lg:h-[488px] rounded-md overflow-hidden  " style={{
+            <div className="w-[70%] sm:w-[300px]  lg:w-[40%] mx-auto h-[350px] lg:h-[488px] rounded-md overflow-hidden " style={{
                 backgroundImage:"url(/images/vector-logo.png)",
                 backgroundRepeat:"no-repeat",
-                backgroundSize:"contain"
+                backgroundSize:"contain",
+                backgroundPosition:"contain",
             }}>
 
             </div>

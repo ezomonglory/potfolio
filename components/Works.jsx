@@ -1,19 +1,10 @@
 import React, { useCallback, useRef, useEffect, useState } from "react";
 import LeftSideWorks from "./LeftSideWorks";
-import { WorksImageWeb, WorksImageMobile, WorksText } from "../Data";
+import { WorksData } from "../Data";
 
-const Works = ({ setNewTop }) => {
-	const [WorksImage, setWorksImage] = useState([]);
-	const workRef = useRef(null);
-	const ref = useRef(null);
+const Works = ({ setNewTop }) => {	
+	const workRef = useRef(null);	
 	const leftRef = useRef();
-	let counter = 0;
-	let bottomCounter = 0;
-	let topp = 0;
-	let nTop = 0;
-	let countee = 0;
-	let nBottom = 0;
-	let bottomm = 0;
 
 	const [count, setCount] = useState(0);
 	const [bottomCount, setbottomCount] = useState(0);
@@ -295,6 +286,7 @@ const Works = ({ setNewTop }) => {
 		const childHeight = divElement[2].children[0];
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
+                alert("up")
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - Math.abs(parseInt(dir))
 				}px `;
@@ -302,6 +294,7 @@ const Works = ({ setNewTop }) => {
 				setNewTop(2);
 			}
 		} else if (dir > 0) {
+            alert("down")
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") + Math.abs(parseInt(dir))
@@ -336,8 +329,14 @@ const Works = ({ setNewTop }) => {
 	const scroll = (dir) => {
 		const divElement = workRef.current.children;
 		const childHeight = divElement[2].children[0];
+        let element        
+        element  = divElement[2].children[0].children[0].children[4];        
+        const rectVals = childHeight.getBoundingClientRect();
+        console.log(rectVals["bottom"])
+            
+        
 		if (dir > 0) {
-			if (childHeight.style.top.replace("px", "") > -1700) {
+			if (rectVals["bottom"] > -550 ) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - dir
 				}px `;

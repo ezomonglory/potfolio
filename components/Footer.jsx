@@ -8,9 +8,12 @@ const Footer = ({ setNewTop }) => {
 	const footerRef = useRef();
 
 	const scroll = (dir) => {
+        const divElement = footerRef.current.children[2].children[1]
+        const rectVals = divElement.getBoundingClientRect()
+        console.log(rectVals["bottom"])
 		const childHeight = footerRef.current;
 		if (dir > 0) {
-			if (childHeight.style.top.replace("px", "") > -1000) {
+			if (rectVals["bottom"] > 700) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - dir
 				}px `;
@@ -30,17 +33,14 @@ const Footer = ({ setNewTop }) => {
 	};
 
     const mobileScroll = (dir) => {       
-	
-		const divElement = workRef.current.children;
-		const childHeight = divElement[2].children[0];
+			
+		const childHeight = footerRef.current
 		if (dir < 0) {
 			if (childHeight.style.top.replace("px", "") > -1700) {
 				childHeight.style.top = `${
 					childHeight.style.top.replace("px", "") - Math.abs(parseInt(dir))
 				}px `;
-			} else {
-				setNewTop(2);
-			}
+			} 
 		} else if (dir > 0) {
 			if (childHeight.style.top.replace("px", "") <= 0) {
 				childHeight.style.top = `${
